@@ -9,6 +9,7 @@ We'll be using the subscription query functionality to push updates about giftca
 
 Tech stack used:
 * [Axon Framework 3.3](https://axoniq.io/product-overview/axon-framework)
+* [Reactor Core 3.1](https://projectreactor.io/) (required for Axon subscription queries)
 * Java 8
 * Spring Boot 2
 * JPA, H2
