@@ -12,5 +12,5 @@ Tech stack used:
 * Java 8
 * Spring Boot 2
 * JPA, H2
-* [Vaadin 8.4](http://vaadin.com)
+* [Vaadin 8.4](https://vaadin.com)
 * [Lombok](https://projectlombok.org)
