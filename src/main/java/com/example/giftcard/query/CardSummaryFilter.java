@@ -1,6 +1,5 @@
 package com.example.giftcard.query;
 
-import lombok.Data;
 import lombok.Value;
 import lombok.experimental.Wither;
 
