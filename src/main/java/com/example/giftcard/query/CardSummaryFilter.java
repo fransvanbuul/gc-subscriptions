@@ -1,10 +1,13 @@
 package com.example.giftcard.query;
 
 import lombok.Data;
+import lombok.Value;
+import lombok.experimental.Wither;
 
-@Data
+@Value
+@Wither
 public class CardSummaryFilter {
 
-    private String idStartsWith;
+    String idStartsWith;
 
 }

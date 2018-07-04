@@ -129,7 +129,7 @@ public class GiftCardUI extends UI {
         idStartsWith.setValueChangeMode(ValueChangeMode.EAGER);
         idStartsWith.setPlaceholder("Starting with");
         idStartsWith.addValueChangeListener(event -> {
-            cardSummaryDataProvider.getFilter().setIdStartsWith(event.getValue());
+            cardSummaryDataProvider.setFilter(cardSummaryDataProvider.getFilter().withIdStartsWith(event.getValue()));
             cardSummaryDataProvider.refreshAll();
         });
         filterRow.getCell(idColumn).setComponent(idStartsWith);

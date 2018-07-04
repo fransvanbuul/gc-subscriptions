@@ -4,9 +4,7 @@ import com.example.giftcard.query.*;
 import com.vaadin.data.provider.AbstractBackEndDataProvider;
 import com.vaadin.data.provider.DataChangeEvent;
 import com.vaadin.data.provider.Query;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Synchronized;
+import lombok.*;
 import lombok.extern.slf4j.XSlf4j;
 import org.axonframework.queryhandling.QueryGateway;
 import org.axonframework.queryhandling.SubscriptionQueryResult;
@@ -35,7 +33,9 @@ public class CardSummaryDataProvider extends AbstractBackEndDataProvider<CardSum
     private SubscriptionQueryResult<Integer, CountChangedUpdate> countQuery;
 
     @Getter
-    private final CardSummaryFilter filter = new CardSummaryFilter();
+    @Setter
+    @NonNull
+    private CardSummaryFilter filter = new CardSummaryFilter(null);
 
     @Override
     @Synchronized
