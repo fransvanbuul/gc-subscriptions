@@ -13,5 +13,5 @@ Tech stack used:
 * Java 8
 * Spring Boot 2
 * JPA, H2
-* [Vaadin 8.4](https://vaadin.com)
+* [Vaadin 8.4](https://vaadin.com), with [Server Push](https://vaadin.com/docs/v8/framework/advanced/advanced-push.html) to push query updates to the browser.
 * [Lombok](https://projectlombok.org)
