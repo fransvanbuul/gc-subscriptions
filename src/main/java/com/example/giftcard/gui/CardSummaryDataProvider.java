@@ -90,9 +90,9 @@ public class CardSummaryDataProvider extends AbstractBackEndDataProvider<CardSum
         /* When the count changes (new giftcards issued), the UI has to do an entirely new query (this is
          * how the Vaadin grid works). When we're bulk issuing, it doesn't make sense to do that on every single
          * issue event. Therefore, we buffer the updates for 250 milliseconds using reactor, and do the new
-         * query at most once per 250ms.   buffer(Duration.ofMillis(250)).
+         * query at most once per 250ms.
          */
-        countQueryResult.updates().subscribe(
+        countQueryResult.updates().buffer(Duration.ofMillis(250)).subscribe(
                 countChanged -> {
                     log.trace("processing query update for {}: {}", countCardSummariesQuery, countChanged);
                     /* This won't do, would lead to immediate new queries, looping a few times. */
