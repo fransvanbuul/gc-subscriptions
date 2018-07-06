@@ -23,7 +23,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <vaadin.version>8.4.4</vaadin.version>
-        <axon.version>3.3</axon.version>
+        <axon.version>3.3.1</axon.version>
         <!-- spring boot 2.0.3 provides by default lombok 1.16.22 which has some issues -->
         <lombok.version>1.18.0</lombok.version>
     </properties>
