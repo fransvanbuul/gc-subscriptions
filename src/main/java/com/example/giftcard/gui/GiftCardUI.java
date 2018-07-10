@@ -121,8 +121,8 @@ public class GiftCardUI extends UI {
         cardSummaryDataProvider = new CardSummaryDataProvider(queryGateway);
         Grid<CardSummary> grid = new Grid<>();
         Grid.Column<?, ?> idColumn = grid.addColumn(CardSummary::getId).setCaption("Card ID");
-        Grid.Column<?, ?> initialValueColumn = grid.addColumn(CardSummary::getInitialValue).setCaption("Initial value");
-        Grid.Column<?, ?> remainingValueColumn = grid.addColumn(CardSummary::getRemainingValue).setCaption("Remaining value");
+        grid.addColumn(CardSummary::getInitialValue).setCaption("Initial value");
+        grid.addColumn(CardSummary::getRemainingValue).setCaption("Remaining value");
 
         HeaderRow filterRow = grid.appendHeaderRow();
         TextField idStartsWith = new TextField();

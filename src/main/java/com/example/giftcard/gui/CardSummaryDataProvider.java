@@ -35,7 +35,7 @@ public class CardSummaryDataProvider extends AbstractBackEndDataProvider<CardSum
     @Getter
     @Setter
     @NonNull
-    private CardSummaryFilter filter = new CardSummaryFilter(null);
+    private CardSummaryFilter filter = new CardSummaryFilter("");
 
     @Override
     @Synchronized
