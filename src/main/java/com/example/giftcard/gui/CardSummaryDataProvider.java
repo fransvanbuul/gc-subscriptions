@@ -67,7 +67,7 @@ public class CardSummaryDataProvider extends AbstractBackEndDataProvider<CardSum
                 cardSummary -> {
                     log.trace("processing query update for {}: {}", fetchCardSummariesQuery, cardSummary);
                     /* This is a Vaadin-specific call to update the UI as a result of data changes. */
-                    fireEvent(new DataChangeEvent.DataRefreshEvent(this, cardSummary));
+                    fireEvent(new DataChangeEvent.DataRefreshEvent<>(this, cardSummary));
                 });
         /*
          * Returning the initial result.
@@ -97,13 +97,13 @@ public class CardSummaryDataProvider extends AbstractBackEndDataProvider<CardSum
                     log.trace("processing query update for {}: {}", countCardSummariesQuery, countChanged);
                     /* This won't do, would lead to immediate new queries, looping a few times. */
 //                        fireEvent(new DataChangeEvent(this));
-                    executorService.execute(() -> fireEvent(new DataChangeEvent(this)));
+                    executorService.execute(() -> fireEvent(new DataChangeEvent<>(this)));
                 });
         return countQueryResult.initialResult().block();
     }
 
     @Synchronized
-    public void shutDown() {
+    void shutDown() {
         if (fetchQueryResult != null) {
             fetchQueryResult.cancel();
             fetchQueryResult = null;
